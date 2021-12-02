@@ -1,27 +1,30 @@
 import { useState } from "react";
 import AuthInput from "../components/auth/AuthInput";
 import { IconWarn } from "../components/icons";
-import useAuth from "../data/hooks/UseAuth";
+import useAuth from "../data/hook/UseAuth";
 
 export default function Autenticacao( props ) {
-  const { usuario, loginGoogle } = useAuth()
+  const { login, cadastrar, loginGoogle } = useAuth()
 
   const [erro, setErro] = useState(null)
   const [modo, setModo] = useState<'login' | 'cadastro'>('login')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
 
-  function submeter() {
-    if (modo === 'login') {
-      console.log('log')
-      exibirErro('Erro no Login!', 3)
-    } else {
-      console.log('cad')
-      exibirErro('Erro no Cadastro!', 3)
-    }
+  async function submeter() {
+    try {
+      if (modo === 'login') {
+          await login(email, senha)
+      } else {
+          await cadastrar(email, senha)
+      }
+  } catch(e) {
+      console.log(e.code)
+      exibirErro(e.code ? 'Digite um usuário válido!' : '')
+  }
   }
 
-  function exibirErro(msg: string, tempo: number) {
+  function exibirErro(msg: string, tempo= 3) {
     setErro(msg)
     setTimeout(() => setErro(null), tempo * 1000)
   }

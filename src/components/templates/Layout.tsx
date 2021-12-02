@@ -1,4 +1,6 @@
-import useAppData from "../../data/hooks/UseAppData";
+import useAppData from "../../data/hook/UseAppData";
+import ForcarAutenticacao from "../../functions/ForcarAutenticacao";
+// import ForcarAutenticacao from "../auth/ForcarAutenticacao";
 import Cabecalho from "./Cabecalho";
 import Conteudo from "./Conteudo";
 import MenuLateral from "./MenuLateral";
@@ -12,7 +14,7 @@ interface PropsLayout {
 export default function Layout( props: PropsLayout ) {
   const {tema} = useAppData()
 
-  return (
+  return ForcarAutenticacao(
     <div className={`${tema} flex h-screen w-screen`}>
       <MenuLateral/>
       <div className={`

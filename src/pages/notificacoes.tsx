@@ -1,5 +1,5 @@
 import Layout from "../components/templates/Layout";
-import useAppData from "../data/hooks/UseAppData";
+import useAppData from "../data/hook/UseAppData";
 
 export default function Notificacoes(  ) {
   const {alternarTema} = useAppData()
