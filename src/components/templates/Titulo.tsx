@@ -18,11 +18,11 @@ export default function Titulo( props: PropsTitulo ) {
       <h2 className={`
         font-light text-sm
         text-gray-600
-        dark:text-gray-400
+        dark:text-gray-300
       `}>
         {props.subtitulo}
       </h2>
-      
+
     </div>
   )
 }

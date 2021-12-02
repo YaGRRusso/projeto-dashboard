@@ -4,11 +4,13 @@ import MenuItem from "./MenuItem";
 
 export default function MenuLateral(  ) {
   return (
-    <aside className={`flex flex-col
-    dark:bg-gray-900`}>
+    <aside className={`
+      flex flex-col
+    dark:bg-gray-900`
+    }>
       <div className={`
-        flex flex-col items-center justify-center
-        h-20 w-20 bg-gradient-to-tr from-indigo-500 to-purple-800
+        flex flex-col items-center justify-center h-20 w-20
+        bg-gradient-to-tr from-indigo-500 to-purple-800
       `}>
         <Logo/>
       </div>

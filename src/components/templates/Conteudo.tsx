@@ -9,6 +9,8 @@ export default function Conteudo( props: PropsConteudo ) {
     <div>
       <h1 className={`
         flex flex-col mt-7
+        text-gray-800
+        dark:text-gray-300
       `}>
         {props.children}
       </h1>

@@ -13,8 +13,8 @@ export default function MenuItem( props: PropsMenuItem ) {
   function renderizarLink() {
     return (
         <a className={`
-          flex flex-col justify-center items-center
-          h-20 w-20  ${props.className}
+          flex flex-col justify-center items-center h-20 w-20
+          ${props.className}
           dark:text-gray-300
         `}>
           {props.icone}
@@ -26,7 +26,11 @@ export default function MenuItem( props: PropsMenuItem ) {
   }
 
   return (
-    <li onClick={props.onClick}className={`hover:bg-gray-300 cursor-pointer dark:hover:bg-gray-800`}>
+    <li onClick={props.onClick}className={`
+      cursor-pointer
+      hover:bg-gray-300
+      dark:hover:bg-gray-800
+    `}>
 
       {props.url ? (
 
